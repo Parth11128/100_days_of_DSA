@@ -1,23 +1,22 @@
-#include <iostream>
-#include <string>
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
 int main() {
-    string s;
-    cin >> s;
+    char s[1000];
+    scanf("%s", s);
 
-    int left = 0, right = s.length() - 1;
-    bool isPalindrome = true;
+    int left = 0;
+    int right = strlen(s) - 1;
 
     while (left < right) {
         if (s[left] != s[right]) {
-            isPalindrome = false;
-            break;
+            printf("NO");
+            return 0;
         }
         left++;
         right--;
     }
 
-    cout << (isPalindrome ? "YES" : "NO");
+    printf("YES");
     return 0;
 }
